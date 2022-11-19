@@ -65,11 +65,11 @@
                                 <input type="text" required class="form-control provinsi" value="{{ Auth::user()->provinsi }}" name="provinsi" placeholder="Provinsi">
                                 <span id="provinsi_error" class="text-danger"></span>
                             </div>
-                            <div class="col-md-6 mt-3">
+                            {{-- <div class="col-md-6 mt-3">
                                 <label for="">Negara</label>
                                 <input type="text" required class="form-control negara" value="{{ Auth::user()->negara }}" name="negara" placeholder="Negara">
                                 <span id="negara_error" class="text-danger"></span>
-                            </div>
+                            </div> --}}
                             <div class="col-md-6 mt-3">
                                 <label for="">Kode pos</label>
                                 <input type="text" required class="form-control kodepos" value="{{ Auth::user()->kodepos }}" name="kodepos" placeholder="Kode pos">
@@ -147,7 +147,7 @@
                         var alamat = $('.alamat').val();
                         var kota = $('.kota').val();
                         var provinsi = $('.provinsi').val();
-                        var negara = $('.negara').val();
+                        // var negara = $('.negara').val();
                         var kodepos = $('.kodepos').val();
                     $.ajax({
                         method: "POST",
@@ -160,7 +160,7 @@
                             'alamat': alamat,
                             'kota': kota,
                             'provinsi': provinsi,
-                            'negara': negara,
+                            // 'negara': negara,
                             'kodepos': kodepos,
                             'payment_mode':"paid by Paypal",
                             'payment_id':details.id,

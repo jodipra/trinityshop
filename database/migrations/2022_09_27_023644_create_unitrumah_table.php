@@ -15,7 +15,8 @@ class CreateUnitrumahTable extends Migration
     {
         Schema::create('unitrumah', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('listrumah_id');
+            //$table->unsignedBigInteger('listrumah_id');
+            $table->foreignId('listrumah_id')->constrained('listperumahan')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->string('slug');
             $table->string('type');
@@ -33,6 +34,7 @@ class CreateUnitrumahTable extends Migration
             $table->mediumText('meta_keywords');
             $table->mediumText('meta_descrip');
             $table->timestamps();
+
         });
     }
 

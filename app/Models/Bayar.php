@@ -20,7 +20,7 @@ class bayar extends Model
         'alamat',
         'kota',
         'provinsi',
-        'negara',
+        // 'negara',
         'kodepos',
         'total_price',
         'payment_mode',

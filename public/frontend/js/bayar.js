@@ -9,7 +9,7 @@ $(document).ready(function (){
        var alamat = $('.alamat').val();
        var kota = $('.kota').val();
        var provinsi = $('.provinsi').val();
-       var negara = $('.negara').val();
+     //   var negara = $('.negara').val();
        var kodepos = $('.kodepos').val();
 
        if(!name)
@@ -89,16 +89,16 @@ $(document).ready(function (){
             $('#provinsi_error').html('');
        }
 
-       if(!negara)
-       {
-            negara_error = "Negara harus diisi";
-            $('#negara_error').html('');
-            $('#negara_error').html(negara_error);
-       }
-       else{
-            negara_error = "";
-            $('#negara_error').html('');
-       }
+     //   if(!negara)
+     //   {
+     //        negara_error = "Negara harus diisi";
+     //        $('#negara_error').html('');
+     //        $('#negara_error').html(negara_error);
+     //   }
+     //   else{
+     //        negara_error = "";
+     //        $('#negara_error').html('');
+     //   }
 
        if(!kodepos)
        {
@@ -112,7 +112,7 @@ $(document).ready(function (){
        }
 
        // 'hizkia' != '' => true
-       if(name_error != '' || lname_error != '' || email_error != '' || phone_error != '' || alamat_error != '' || kota_error != '' || provinsi_error != '' || negara_error != '' || kodepos_error != '')
+       if(name_error != '' || lname_error != '' || email_error != '' || phone_error != '' || alamat_error != '' || kota_error != '' || provinsi_error != '' || kodepos_error != '')
        {
             return false;
        }
@@ -126,7 +126,7 @@ $(document).ready(function (){
                'alamat': alamat, 
                'kota': kota, 
                'provinsi': provinsi, 
-               'negara': negara, 
+               // 'negara': negara, 
                'kodepos': kodepos
             }
 

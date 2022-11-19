@@ -41,7 +41,7 @@ class bayarController extends Controller
         $bayar->alamat= $request->input('alamat');
         $bayar->kota = $request->input('kota');
         $bayar->provinsi = $request->input('provinsi');
-        $bayar->negara = $request->input('negara');
+        // $bayar->negara = $request->input('negara');
         $bayar->kodepos = $request->input('kodepos');
         
         $bayar->payment_mode = $request->input('payment_mode');
@@ -83,7 +83,7 @@ class bayarController extends Controller
             $user->alamat= $request->input('alamat');
             $user->kota = $request->input('kota');
             $user->provinsi = $request->input('provinsi');
-            $user->negara = $request->input('negara');
+            // $user->negara = $request->input('negara');
             $user->kodepos = $request->input('kodepos');
             $user->update();
         }
@@ -114,7 +114,7 @@ class bayarController extends Controller
             $alamat = $request->input('alamat');
             $kota = $request->input('kota');
             $provinsi = $request->input('provinsi');
-            $negara = $request->input('negara');
+            // $negara = $request->input('negara');
             $kodepos = $request->input('kodepos');
 
             return response()->json([
@@ -125,7 +125,7 @@ class bayarController extends Controller
             'alamat'=> $alamat, 
             'kota'=> $kota, 
             'provinsi'=> $provinsi, 
-            'negara'=> $negara, 
+            // 'negara'=> $negara, 
             'kodepos'=> $kodepos, 
             'total_price' => $total_price,
             ]);
