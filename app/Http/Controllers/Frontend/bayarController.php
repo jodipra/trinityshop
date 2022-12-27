@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
+
 class bayarController extends Controller
 {
     public function index() 
@@ -34,6 +35,15 @@ class bayarController extends Controller
     {
         $bayar = new Bayar();
         $bayar->user_id = Auth::id();
+        if($request->hasFile('buktipembayaran'))
+        {
+            $file = $request->file('buktipembayaran');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move('assets/uploads/buktipembayaran/',$filename);
+            $bayar->image = $filename;
+            
+        }
         $bayar->name = $request->input('name');
         $bayar->lname = $request->input('lname');
         $bayar->email = $request->input('email');
@@ -43,7 +53,6 @@ class bayarController extends Controller
         $bayar->provinsi = $request->input('provinsi');
         // $bayar->negara = $request->input('negara');
         $bayar->kodepos = $request->input('kodepos');
-        
         $bayar->payment_mode = $request->input('payment_mode');
         $bayar->payment_id = $request->input('payment_id');
         //menghitung total harga

@@ -18,6 +18,7 @@ class OrderController extends Controller
     public function view($id)
     {
         $bayar = Bayar::where('id', $id)->first();
+        //dd($bayar);
         return view('admin.orders.view', compact('bayar'));
     }
 

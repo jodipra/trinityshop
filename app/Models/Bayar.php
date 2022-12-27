@@ -23,6 +23,7 @@ class bayar extends Model
         // 'negara',
         'kodepos',
         'total_price',
+        'buktipembayaran',
         'payment_mode',
         'payment_id',
         'status',

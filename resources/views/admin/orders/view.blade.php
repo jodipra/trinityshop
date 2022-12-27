@@ -33,6 +33,11 @@
                                 </div>
                                 <label for="">Kode Pos</label>
                                 <div class="border p-2">{{ $bayar->kodepos }}</div>
+                                <label for="">Bukti Pembayaran</label>
+                                <div>
+                                    <img src="{{asset('assets/uploads/buktipembayaran/' .  $bayar->image) }}"  width="50%" alt="bukti pembayaran" />
+                                </div>
+
                             </div>
                             <div class="col-md-6">
                                 <h4>Order Details</h4>
@@ -46,6 +51,7 @@
                                             <th>Image</th>
                                         </tr>
                                     </thead>
+
                                     <body>
                                         @foreach ($bayar->order as $item)
                                             <tr>
@@ -53,33 +59,36 @@
                                                 <td>{{ $item->qty }}</td>
                                                 <td>{{ number_format($item->price) }}</td>
                                                 <td>
-                                                    <img src="{{ asset('assets/uploads/unitrumah/'.$item->unitrumah->image) }}" width="50px" alt="Unit Image">
+                                                    <img src="{{ asset('assets/uploads/unitrumah/' . $item->unitrumah->image) }}"
+                                                        width="50px" alt="Unit Image">
                                                 </td>
 
                                             </tr>
                                         @endforeach
                                     </body>
                                 </table>
-                                <h4 class="px-2">Total : Rp <span class="float-end">{{ $bayar->total_price }} </span></h4>
-                                 <div class="mt-5 px-2">
+                                <h4 class="px-2">Total : Rp <span class="float-end">{{ $bayar->total_price }} </span>
+                                </h4>
+                                <div class="mt-5 px-2">
                                     <label for="">Order Status</label>
-                                    <form action="{{ url('update-order/'.$bayar->id) }}" method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            <select class="form-select" name="order_status">
-                                                <option {{ $bayar->status == '0'? 'selected':'' }} value="0">Pending</option>
-                                                <option {{ $bayar->status == '1'? 'selected':'' }} value="1">Completed</option>
-                                            </select>
+                                    <form action="{{ url('update-order/' . $bayar->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <select class="form-select" name="order_status">
+                                            <option {{ $bayar->status == '0' ? 'selected' : '' }} value="0">Pending
+                                            </option>
+                                            <option {{ $bayar->status == '1' ? 'selected' : '' }} value="1">Completed
+                                            </option>
+                                        </select>
                                         <button type="submit" class="btn btn-primary float-end mt-3">Update</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

@@ -26,6 +26,7 @@ class CreateBayarTable extends Migration
             $table->string('negara');
             $table->string('kodepos');
             $table->integer('total_price');
+            $table->string('image')->nullable();
             $table->string('payment_mode');
             $table->string('payment_id')->nullable();
             $table->tinyInteger('status')->default('0');
